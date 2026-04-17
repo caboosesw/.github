@@ -1,0 +1,49 @@
+name: Codex Task
+description: Work item for Codex agent
+title: "[Codex] "
+labels: ["codex"]
+
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be built or fixed?
+      placeholder: Fix login redirect bug on mobile
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior
+      description: What is happening now?
+      placeholder: User logs in but stays on login page
+
+  - type: textarea
+    id: desired
+    attributes:
+      label: Desired Behavior
+      description: What should happen?
+      placeholder: User is redirected to dashboard after login
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / Files
+      description: Any hints where to look?
+      placeholder: auth.js, login.tsx
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this is done?
+      placeholder: Login works on mobile + desktop
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for Vercel Preview
+      description: What should I test in preview?
+      placeholder: Test login flow on iPhone viewport
