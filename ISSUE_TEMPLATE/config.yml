@@ -1,0 +1,3 @@
+# Blank issues stay enabled on purpose: a one-line stub from a phone is the main capture path.
+# The triage routine turns stubs into the structured format used by the other templates.
+blank_issues_enabled: true

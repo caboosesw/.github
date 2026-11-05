@@ -1,0 +1,79 @@
+name: Feature / improvement
+description: A change in visible behavior, written in the standard issue structure.
+title: ""
+body:
+  - type: textarea
+    id: cto_summary
+    attributes:
+      label: CTO summary
+      description: 1-3 plain sentences. Outcome, scope, risk, and what changes for users (or "no visible change").
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why now? Links to specs, related issues, decisions.
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What happens today?
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed behavior
+      description: What should happen? Decided approach only; put unknowns under Open questions.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checkboxes. Each one testable and observable.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and out of scope
+      description: Non-goals, files or contracts not to touch, cost or security limits.
+  - type: textarea
+    id: verify
+    attributes:
+      label: How to verify
+      description: Exact commands, plus a manual or preview check for UI changes.
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk class
+      description: Auth/secrets, money, schema, public contract, new dependency or cost, architecture, or security/privacy/data-loss risk is never Routine.
+      options:
+        - Routine
+        - Needs owner decision
+  - type: dropdown
+    id: route
+    attributes:
+      label: Route
+      options:
+        - Direct agent
+        - Design first
+        - Owner decision
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort
+      options:
+        - S
+        - M
+        - L
+  - type: textarea
+    id: llm_context
+    attributes:
+      label: LLM context
+      description: Intent, assumptions, known follow-ups, and suggested next work for the implementing agent.
+  - type: textarea
+    id: questions
+    attributes:
+      label: Open questions
