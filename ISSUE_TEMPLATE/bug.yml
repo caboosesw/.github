@@ -1,0 +1,46 @@
+name: Bug
+description: Something is broken. Evidence first.
+title: ""
+body:
+  - type: textarea
+    id: cto_summary
+    attributes:
+      label: CTO summary
+      description: 1-3 plain sentences. Who is affected, how badly, and any workaround.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Steps to reproduce, expected vs actual, error text, screenshots, and `path:line` references if known.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed fix
+      description: Only if decided. Otherwise leave blank.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- [ ] Reproduction steps no longer fail\n- [ ] Regression test added"
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: How to verify
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk class
+      options:
+        - Routine
+        - Needs owner decision
+  - type: textarea
+    id: llm_context
+    attributes:
+      label: LLM context
+      description: Intent, assumptions, suspected cause, follow-ups.

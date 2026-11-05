@@ -1,0 +1,12 @@
+name: Idea / stub
+description: Quick capture. One sentence is enough; triage will structure it and ask follow-ups.
+title: ""
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: Say it however it comes out. Don't polish.
+      placeholder: Let users share a result link
+    validations:
+      required: true

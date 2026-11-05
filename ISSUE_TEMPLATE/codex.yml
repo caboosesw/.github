@@ -1,49 +1,52 @@
 name: Codex Task
-description: Work item for Codex agent
+description: Agent-ready work item for Codex. Use when decisions are already made.
 title: "[Codex] "
 labels: ["codex"]
-
 body:
   - type: textarea
-    id: goal
+    id: cto_summary
     attributes:
-      label: Goal
-      description: What should be built or fixed?
+      label: CTO summary
+      description: 1-3 plain sentences. What should be built or fixed, and what changes for users.
       placeholder: Fix login redirect bug on mobile
     validations:
       required: true
-
   - type: textarea
     id: current
     attributes:
-      label: Current Behavior
+      label: Current behavior
       description: What is happening now?
       placeholder: User logs in but stays on login page
-
   - type: textarea
-    id: desired
+    id: proposed
     attributes:
-      label: Desired Behavior
+      label: Proposed behavior
       description: What should happen?
       placeholder: User is redirected to dashboard after login
-
+    validations:
+      required: true
   - type: textarea
     id: scope
     attributes:
-      label: Scope / Files
-      description: Any hints where to look?
+      label: Scope / files
+      description: Hints on where to look, and what not to touch.
       placeholder: auth.js, login.tsx
-
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance Criteria
-      description: How do we know this is done?
-      placeholder: Login works on mobile + desktop
-
+      label: Acceptance criteria
+      description: Checkboxes. How do we know this is done?
+      placeholder: "- [ ] Login works on mobile and desktop"
+    validations:
+      required: true
   - type: textarea
-    id: notes
+    id: verify
     attributes:
-      label: Notes for Vercel Preview
-      description: What should I test in preview?
+      label: How to verify
+      description: Commands to run, plus what to test in the Vercel preview.
       placeholder: Test login flow on iPhone viewport
+  - type: textarea
+    id: llm_context
+    attributes:
+      label: LLM context
+      description: Intent, assumptions, known follow-ups.
