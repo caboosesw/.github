@@ -1,0 +1,101 @@
+name: Agent task
+description: A unit of work sized for one agent, one branch, one PR
+title: "[Task] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One or two sentences. What changes for the user or the system?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      description: See AGENTS.md → Work Sizing. XL is not agent-assignable; split it first.
+      options:
+        - XS — text/config tweak (≤1 file, ≤20 lines)
+        - S — isolated bug or component (≤3 files, ≤150 lines)
+        - M — one page/feature on established patterns (≤8 files, ≤400 lines)
+        - L — multi-component feature with tests (≤15 files, ≤800 lines)
+        - XL — vertical slice; must be decomposed
+        - Unsure — needs triage
+    validations:
+      required: true
+
+  - type: dropdown
+    id: touches
+    attributes:
+      label: Touches
+      description: Shared = schema/migrations, packages/*, routing, auth, env/flags, design tokens, package.json, CI, standards files.
+      options:
+        - isolated
+        - shared
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: owns-paths
+    attributes:
+      label: Owns paths
+      description: Files or directories this issue may change. One per line.
+      placeholder: |
+        apps/thoughtgarden/app/ideas/[id]/
+        apps/thoughtgarden/components/IdeaScoreCard.tsx
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Five bullets max. More than five means split the issue.
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+    validations:
+      required: true
+
+  - type: input
+    id: blocked-by
+    attributes:
+      label: Blocked by
+      placeholder: "#123, #124 or none"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: Required evidence
+      options:
+        - label: Unit tests (Vitest)
+        - label: E2E tests (Playwright)
+        - label: Screenshots (mobile + desktop)
+        - label: Browser recording
+        - label: Behind a feature flag
+
+  - type: dropdown
+    id: decision
+    attributes:
+      label: Needs a product or architecture decision?
+      options:
+        - "No"
+        - "Yes — add needs-decision label"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Context and notes
+      description: Links, prior art, relevant ARCHITECTURE.md sections.
